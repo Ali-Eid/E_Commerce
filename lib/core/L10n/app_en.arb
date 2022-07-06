@@ -1,0 +1,22 @@
+{
+    "language":"English",
+    "hello_world":"hello world",
+    "discount":"Discount",
+    "edit_profile":"Edit Profile",
+    "change_language":"Change Language",
+    "about":"About",
+    "name":"Name",
+    "email":"Email",
+    "phone":"Phone",
+    "price":"Price",
+    "add_to_cart":"Add To Cart",
+    "update_info_success":"Update Info Success",
+    "update":"Update Info ",
+    "add_quantitiy":"Added Quantitiy",
+    "update_quantity":" update",
+    "no_favourites":"No Favourites",
+    "cart_empty":"Cart Empty",
+    "server_error":"Server Error Please Try again Later . ",
+    "offline":"No internet Connection , please check your connection ."
+
+}
