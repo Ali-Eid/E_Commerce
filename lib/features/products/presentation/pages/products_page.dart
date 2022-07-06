@@ -1,4 +1,4 @@
-import 'package:clean_architicture_ecommerce/core/widget/no_intenet_widget.dart';
+import '../../../../core/widget/no_intenet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -8,7 +8,6 @@ import 'product_item_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProductsWidet extends StatelessWidget {
-  // final List<DataProductEntities> productEntities;
   final List<ProductEntities> productEntities;
   const ProductsWidet({Key? key, required this.productEntities})
       : super(key: key);

@@ -47,7 +47,6 @@ class CategoryDetailsWidget extends StatelessWidget {
                 ),
                 child: CategoryDetailsItemWidget(
                   model: categoryDetails[index],
-                  // model: productEntities[index],
                 ),
               ),
             ),

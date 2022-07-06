@@ -50,12 +50,6 @@ class _MyCustomSplashScreenState extends State<MyCustomSplashScreen>
         _containerOpacity = 1;
       });
     });
-
-    // Timer(const Duration(seconds: 4), () {
-    //   setState(() {
-    //     Navigator.pushReplacement(context, PageTransition(const HomeLayout()));
-    //   });
-    // });
   }
 
   @override
@@ -123,7 +117,6 @@ class _MyCustomSplashScreenState extends State<MyCustomSplashScreen>
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                // child: Image.asset('assets/images/file_name.png')
                 child: const Image(
                     image: AssetImage('assets/images/mobile-shop.png'))),
           ),

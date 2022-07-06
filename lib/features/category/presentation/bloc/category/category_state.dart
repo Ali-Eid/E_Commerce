@@ -32,16 +32,3 @@ class OfflineCategoyState extends CategoryState {
 }
 
 //-----------------Category Details ---------
-// class LoadingCategoyDetailsState extends CategoryState {}
-
-// class LoadedCategoyDetailsState extends CategoryState {
-//   final List<CategoryDetailsEntities> category;
-
-//   const LoadedCategoyDetailsState({required this.category});
-// }
-
-// class ErrorGetDetailsCategoyState extends CategoryState {
-//   final String message;
-
-//   const ErrorGetDetailsCategoyState({required this.message});
-// }

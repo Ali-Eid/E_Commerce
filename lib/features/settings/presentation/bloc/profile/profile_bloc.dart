@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:clean_architicture_ecommerce/core/error/failures/failures.dart';
+import '../../../../../core/error/failures/failures.dart';
 import '../../../domain/entities/profile_entity.dart';
 import '../../../domain/usecases/get_profile_usecase.dart';
 import '../../../domain/usecases/update_profile.usecase.dart';

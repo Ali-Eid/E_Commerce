@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:clean_architicture_ecommerce/core/error/failures/failures.dart';
+import '../../../../../core/error/failures/failures.dart';
 import '../../../domain/entities/cart_entitiy.dart';
 import '../../../domain/usecases/get_cart_usecase.dart';
 import 'package:equatable/equatable.dart';
@@ -15,7 +15,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         emit(LoadingCart());
         final failureOrCart = await getCart();
         failureOrCart.fold((failure) {
-          // emit(ErrorGetCart(message: l.toString()));
           emit(_mapFailureToState(failure));
         }, (carts) {
           emit(LoadedCart(carts: carts));

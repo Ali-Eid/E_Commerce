@@ -21,7 +21,6 @@ class ProductItemWidget extends StatelessWidget {
     required this.model,
   }) : super(key: key);
 
-  // Map<int?, bool?>? isFav = {};
   @override
   Widget build(BuildContext context) {
     final double _w = MediaQuery.of(context).size.width;
@@ -86,7 +85,6 @@ class ProductItemWidget extends StatelessWidget {
               model.name!,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              // style: const TextStyle(),
             ),
           ),
         ),

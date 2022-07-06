@@ -1,5 +1,5 @@
-import 'package:clean_architicture_ecommerce/core/widget/awesome_dialog_failure.dart';
-import 'package:clean_architicture_ecommerce/home/home_layout.dart';
+import '../../../../core/widget/awesome_dialog_failure.dart';
+import '../../../../home/home_layout.dart';
 
 import '../../../../core/app_theme.dart';
 import '../bloc/sign_up/signup_bloc.dart';

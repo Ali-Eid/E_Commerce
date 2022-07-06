@@ -1,5 +1,5 @@
-import 'package:clean_architicture_ecommerce/core/error/exceptions/exceptions.dart';
-import 'package:clean_architicture_ecommerce/core/network/network_connection.dart';
+import '../../../../core/error/exceptions/exceptions.dart';
+import '../../../../core/network/network_connection.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/constants.dart';

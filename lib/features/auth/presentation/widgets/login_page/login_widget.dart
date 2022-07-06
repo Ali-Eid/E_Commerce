@@ -20,7 +20,6 @@ class LoginWidget extends StatelessWidget {
       key: formkey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.10,

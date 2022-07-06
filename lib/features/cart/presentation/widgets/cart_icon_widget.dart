@@ -10,12 +10,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartIconWidget extends StatefulWidget {
   @override
-  // final GlobalKey key;
   final ProductEntities product;
   const CartIconWidget({
     Key? key,
     required this.product,
-    //  required this.key
   }) : super(key: key);
 
   @override

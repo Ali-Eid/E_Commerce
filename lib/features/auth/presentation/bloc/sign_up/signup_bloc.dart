@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:clean_architicture_ecommerce/core/error/failures/failures.dart';
-import 'package:clean_architicture_ecommerce/core/error/strings/error_messages.dart';
+import '../../../../../core/error/failures/failures.dart';
+import '../../../../../core/error/strings/error_messages.dart';
 import 'package:dartz/dartz.dart';
 import '../../../domain/entities/auth_entities.dart';
 import '../../../domain/usecases/sign_up.dart';

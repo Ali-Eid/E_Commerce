@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:clean_architicture_ecommerce/core/widget/page_transition.dart';
-import 'package:clean_architicture_ecommerce/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:clean_architicture_ecommerce/features/auth/presentation/pages/login_page.dart';
-import 'package:clean_architicture_ecommerce/features/settings/presentation/bloc/localization/localization_bloc.dart';
+import '../../core/widget/page_transition.dart';
+import 'presentation/bloc/login/login_bloc.dart';
+import 'presentation/pages/login_page.dart';
+import '../settings/presentation/bloc/localization/localization_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -118,7 +118,6 @@ class _SplashScreenAuth extends State<SplashScreenAuth>
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                // child: Image.asset('assets/images/file_name.png')
                 child: const Image(
                     image: AssetImage('assets/images/mobile-shop.png'))),
           ),

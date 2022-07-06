@@ -69,12 +69,10 @@ class _ProfileEditWidgetState extends State<EditProfilePage> {
                           radius: MediaQuery.of(context).size.width * 0.20,
                           child: Container(
                             decoration: BoxDecoration(
-                                // color: primaryColor,
                                 border:
                                     Border.all(width: 0.5, color: primaryColor),
                                 shape: BoxShape.circle),
                           ),
-                          // radius: 75,
                           backgroundImage:
                               CachedNetworkImageProvider(widget.profile.image),
                         ),

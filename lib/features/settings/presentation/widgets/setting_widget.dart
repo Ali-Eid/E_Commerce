@@ -34,17 +34,14 @@ class _ProfileWidgetState extends State<SettingWidget> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: _w / 8),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
                     radius: MediaQuery.of(context).size.width * 0.20,
                     child: Container(
                       decoration: BoxDecoration(
-                          // color: primaryColor,
                           border: Border.all(width: 0.5, color: primaryColor),
                           shape: BoxShape.circle),
                     ),
-                    // radius: 75,
                     backgroundImage:
                         CachedNetworkImageProvider(widget.profile.image)),
                 const SizedBox(
@@ -173,7 +170,6 @@ class _ProfileWidgetState extends State<SettingWidget> {
                                   setState(() {
                                     _local = value.toString();
                                   });
-                                  // Phoenix.rebirth(context);
                                   BlocProvider.of<CategoryBloc>(context)
                                       .add(GetCategoryEvent());
                                   BlocProvider.of<CartBloc>(context)

@@ -1,4 +1,4 @@
-import 'package:clean_architicture_ecommerce/features/favourites/presentation/pages/favourite_page.dart';
+import '../features/favourites/presentation/pages/favourite_page.dart';
 
 import '../features/cart/presentation/bloc/add_delete_cart/add_delete_cart_bloc.dart';
 import '../features/cart/presentation/bloc/cart/cart_bloc.dart';
@@ -21,7 +21,6 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> {
-  // final GlobalKey _key = GlobalKey();
   final List<Widget> pages = [
     const HomePage(),
     const ProductsPage(),
@@ -37,7 +36,6 @@ class _HomeLayoutState extends State<HomeLayout> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         extendBody: true,
         floatingActionButton: FloatingActionButton(
-          // elevation: 20,
           key: BlocProvider.of<AddDeleteCartBloc>(context).keyCart,
           clipBehavior: Clip.antiAliasWithSaveLayer,
           child: const Icon(Icons.shopping_cart_sharp),

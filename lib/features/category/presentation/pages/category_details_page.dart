@@ -26,7 +26,6 @@ class CategorDetailsPage extends StatelessWidget {
               return CategoryDetailsWidget(
                 categoryDetails: state.category,
               );
-              // );
             } else {
               return const Text('');
             }

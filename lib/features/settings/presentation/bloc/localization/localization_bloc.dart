@@ -16,10 +16,7 @@ class LocalizationBloc extends Bloc<LocalizationEvent, LocalizationState> {
     on<LocalizationEvent>((event, emit) async {
       if (event is SetLocalEvent) {
         setLanguage(event.locale);
-        // emit(ChangeLocalizationState(local: event.locale));
-        // SharedPreferences.getInstance().then((value) {
-        //   value.setString('lang', event.locale);
-        // });
+
         emit(LocalizationInitial(event.locale));
       }
     });

@@ -1,5 +1,5 @@
-import 'package:clean_architicture_ecommerce/core/widget/no_intenet_widget.dart';
-import 'package:clean_architicture_ecommerce/features/banners/presentation/bloc/banners/banners_bloc.dart';
+import '../../../../core/widget/no_intenet_widget.dart';
+import '../../../banners/presentation/bloc/banners/banners_bloc.dart';
 
 import '../../../cart/presentation/bloc/cart/cart_bloc.dart';
 import '../bloc/category/category_bloc.dart';
