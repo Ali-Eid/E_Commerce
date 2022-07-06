@@ -16,8 +16,6 @@ class CategoryItemWidget extends StatelessWidget {
     final double _w = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () {
-        // BlocProvider.of<CategoryDetailsBloc>(context)
-        //     .add(GetDetailsCategoryEvent(model.id));
         Navigator.of(context).push(MaterialPageRoute(
             builder: (_) => CategorDetailsPage(
                   categoryid: model.id,

@@ -23,18 +23,14 @@ class RemoteAddFavouriteDataSourceImplements implements RemoteDataSource {
   Future<ProductFavouriteEntities> addFavourite(String productid) async {
     try {
       final body = {'product_id': productid};
-      final response = await client
-          .post(Uri.parse(BASE_URL + 'favorites'), body: body, headers: {
-        // 'Content-Type': 'application/json',
-        'lang': lang!,
-        'Authorization': token!
-      });
-      // print('body favourite success ${response.body}');
+      final response = await client.post(Uri.parse(BASE_URL + 'favorites'),
+          body: body, headers: {'lang': lang!, 'Authorization': token!});
+
       if (response.statusCode == 200) {
         final jsondecode = json.decode(response.body) as Map<String, dynamic>;
         final jsonToFavourite =
             ProductFavouriteModel.fromjson(jsondecode['data']['product']);
-        // print('after decode ${jsonToFavourite.price}');
+
         return jsonToFavourite;
       } else {
         throw ServerException();

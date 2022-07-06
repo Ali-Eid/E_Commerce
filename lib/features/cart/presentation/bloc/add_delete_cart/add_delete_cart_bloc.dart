@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:clean_architicture_ecommerce/core/error/failures/failures.dart';
+import '../../../../../core/error/failures/failures.dart';
 import '../../../../../core/constants.dart';
 import '../../../domain/entities/cart_entitiy.dart';
 import '../../../domain/usecases/add_to_cart.dart';
@@ -59,9 +59,6 @@ class AddDeleteCartBloc extends Bloc<AddDeleteCartEvent, AddDeleteCartState> {
         final failureOrUpdate =
             await updateQuantity(event.cartid, event.quantity.toString());
         failureOrUpdate.fold((failure) {
-          // emit(
-          //   ErrorquantityState(message: l.toString()),
-          // );
           emit(_mapFailureToState(failure));
         }, (cart) => {emit(updatequantityState(cart: cart))});
       }

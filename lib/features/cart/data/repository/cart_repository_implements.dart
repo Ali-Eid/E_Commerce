@@ -1,4 +1,4 @@
-import 'package:clean_architicture_ecommerce/core/network/network_connection.dart';
+import '../../../../core/network/network_connection.dart';
 
 import '../datasources/remote_data_source.dart';
 import '../../domain/entities/cart_entitiy.dart';

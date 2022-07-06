@@ -11,7 +11,6 @@ abstract class LocalizationState extends Equatable {
 class LocalizationInitial extends LocalizationState {
   @override
   String local = 'en';
-  // const LocalizationInitial({required local});
   LocalizationInitial([this.local = 'en']);
   @override
   List<Object> get props => [local];

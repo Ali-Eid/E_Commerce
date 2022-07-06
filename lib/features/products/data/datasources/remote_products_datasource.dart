@@ -26,7 +26,6 @@ class RemoteDataSourceImplements implements RemoteDatasource {
         'lang': lang!,
         'Authorization': token!,
       });
-      // print(response.body);
       if (response.statusCode == 200) {
         final decodejson = json.decode(response.body) as Map<String, dynamic>;
         final List<ProductEntities> productsModel = decodejson['data']['data']

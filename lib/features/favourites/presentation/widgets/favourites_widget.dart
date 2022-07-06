@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:clean_architicture_ecommerce/features/favourites/presentation/bloc/add_delete_favourite/add_delete_favourite_bloc.dart';
-import 'package:clean_architicture_ecommerce/features/products/presentation/bloc/product_details/productdetails_bloc.dart';
-import 'package:clean_architicture_ecommerce/features/products/presentation/pages/product_details_page.dart';
+import '../bloc/add_delete_favourite/add_delete_favourite_bloc.dart';
+import '../../../products/presentation/bloc/product_details/productdetails_bloc.dart';
+import '../../../products/presentation/pages/product_details_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import '../../domain/entities/product_favourite_entity.dart';

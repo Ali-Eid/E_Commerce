@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:clean_architicture_ecommerce/core/error/failures/failures.dart';
+import '../../../../../core/error/failures/failures.dart';
 import '../../../../../core/constants.dart';
 import '../../../domain/entities/product_favourite_entity.dart';
 import '../../../domain/usecases/add_favourite.dart';

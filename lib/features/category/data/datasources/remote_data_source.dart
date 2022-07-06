@@ -59,7 +59,7 @@ class RemoteCategoryDataSourceImpl implements RemoteCategoryDataSource {
           isFav.addAll({element.id: element.inFavorites});
           isCart.addAll({element.id: element.inCart});
         }
-        // print('zero is ${jsonToCategoryDetails[0]}');
+
         return jsonToCategoryDetails;
       } else {
         throw ServerException();

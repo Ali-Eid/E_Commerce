@@ -1,5 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:clean_architicture_ecommerce/core/app_theme.dart';
+import '../app_theme.dart';
 import 'package:flutter/material.dart';
 
 AwesomeDialog getDialogFailure(

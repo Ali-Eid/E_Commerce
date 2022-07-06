@@ -1,4 +1,4 @@
-import 'package:clean_architicture_ecommerce/core/network/network_connection.dart';
+import '../../../../core/network/network_connection.dart';
 
 import '../../../../core/error/exceptions/exceptions.dart';
 import '../datasource/local_data_source.dart';

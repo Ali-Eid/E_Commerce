@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class FavouriteIconWidget extends StatefulWidget {
-  // final int productid;
   final ProductEntities product;
   const FavouriteIconWidget({Key? key, required this.product})
       : super(key: key);
@@ -26,7 +25,6 @@ class _FavouriteIconWidget extends State<FavouriteIconWidget> {
       builder: (context, state) {
         return IconButton(
           onPressed: () {
-            // print('product id is ${widget.product.id}');
             setState(() {
               if (isFav[widget.product.id]) {
                 BlocProvider.of<AddDeleteFavouriteBloc>(context).add(
@@ -60,7 +58,6 @@ class _FavouriteIconWidget extends State<FavouriteIconWidget> {
             });
           },
           icon: isFav[widget.product.id]
-              // model.inFavorites!
               ? const Icon(
                   Icons.favorite,
                   color: primaryColor,

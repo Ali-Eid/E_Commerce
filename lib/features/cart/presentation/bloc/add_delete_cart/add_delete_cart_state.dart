@@ -58,9 +58,3 @@ class updatequantityState extends AddDeleteCartState {
     required this.cart,
   });
 }
-
-// class ErrorquantityState extends AddDeleteCartState {
-//   final String message;
-
-//   const ErrorquantityState({required this.message});
-// }

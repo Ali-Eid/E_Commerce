@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:clean_architicture_ecommerce/core/widget/no_intenet_widget.dart';
+import '../../../../core/widget/no_intenet_widget.dart';
 import '../bloc/cart/cart_bloc.dart';
 import '../widgets/cart_widget.dart';
 import 'package:flutter/material.dart';

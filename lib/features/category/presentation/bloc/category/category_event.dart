@@ -8,11 +8,3 @@ abstract class CategoryEvent extends Equatable {
 }
 
 class GetCategoryEvent extends CategoryEvent {}
-
-// class GetDetailsCategoryEvent extends CategoryEvent {
-//   final int id;
-
-//   const GetDetailsCategoryEvent(this.id);
-//   @override
-//   List<Object> get props => [id];
-// }

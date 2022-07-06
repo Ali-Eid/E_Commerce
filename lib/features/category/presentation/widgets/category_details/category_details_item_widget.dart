@@ -59,9 +59,6 @@ class CategoryDetailsItemWidget extends StatelessWidget {
                   ),
               ],
             ),
-            // BlocBuilder<FavouriteBloc, FavouriteState>(
-            //   builder: (context, state) {
-            //     return
             Padding(
               padding: const EdgeInsets.only(left: 8),
               child:
@@ -82,8 +79,6 @@ class CategoryDetailsItemWidget extends StatelessWidget {
                 },
               ),
             ),
-            //   },
-            // ),
           ],
         ),
         Expanded(

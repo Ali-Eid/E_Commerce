@@ -30,8 +30,6 @@ class _CartWidgetState extends State<CartWidget> {
               backgroundColor: primaryColor,
               duration: const Duration(seconds: 1),
               elevation: 5,
-
-              // padding: EdgeInsets.all(8),
             ),
           );
         }
@@ -140,7 +138,6 @@ class _CartWidgetState extends State<CartWidget> {
                       horizontal: 8,
                     ),
                     child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
                           '${AppLocalizations.of(context)!.price} :',
@@ -188,7 +185,6 @@ class _CartWidgetState extends State<CartWidget> {
                               'ــ',
                               style: TextStyle(
                                   color: Colors.white,
-                                  // fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             )),
                       ),
@@ -219,7 +215,6 @@ class _CartWidgetState extends State<CartWidget> {
                           },
                           child: Text(
                             AppLocalizations.of(context)!.update,
-                            // style: const TextStyle(fontWeight: FontWeight.bold),
                           ))
                     ],
                   )

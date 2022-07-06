@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:clean_architicture_ecommerce/core/constants.dart';
-import 'package:clean_architicture_ecommerce/core/error/strings/error_messages.dart';
+import '../../../../core/constants.dart';
+import '../../../../core/error/strings/error_messages.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../../core/error/exceptions/exceptions.dart';

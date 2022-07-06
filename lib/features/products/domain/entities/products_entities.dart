@@ -1,11 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-// class ProductEntities extends Equatable {
-//   List<DataProductEntities>? data;
-
-//   @override
-//   List<Object?> get props => [data];
-// }
 class ProductEntities extends Equatable {
   final int? id;
   var price;

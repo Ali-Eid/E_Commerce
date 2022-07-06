@@ -1,7 +1,7 @@
-import 'package:clean_architicture_ecommerce/core/constants.dart';
-import 'package:clean_architicture_ecommerce/core/widget/no_intenet_widget.dart';
-import 'package:clean_architicture_ecommerce/features/favourites/presentation/bloc/favourite/favourite_bloc.dart';
-import 'package:clean_architicture_ecommerce/features/favourites/presentation/widgets/favourites_widget.dart';
+import '../../../../core/constants.dart';
+import '../../../../core/widget/no_intenet_widget.dart';
+import '../bloc/favourite/favourite_bloc.dart';
+import '../widgets/favourites_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

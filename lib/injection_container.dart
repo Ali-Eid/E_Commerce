@@ -1,4 +1,4 @@
-import 'package:clean_architicture_ecommerce/core/network/network_connection.dart';
+import 'core/network/network_connection.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import 'features/cart/data/datasources/remote_data_source.dart';

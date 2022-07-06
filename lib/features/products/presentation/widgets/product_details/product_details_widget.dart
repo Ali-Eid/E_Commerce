@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:clean_architicture_ecommerce/features/cart/domain/entities/cart_entitiy.dart';
-import 'package:clean_architicture_ecommerce/features/cart/presentation/bloc/cart/cart_bloc.dart';
+import '../../../../cart/domain/entities/cart_entitiy.dart';
+import '../../../../cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:easycartanimation/easycartanimation.dart';
 import '../../../../../core/constants.dart';
 import '../../../../cart/presentation/bloc/add_delete_cart/add_delete_cart_bloc.dart';

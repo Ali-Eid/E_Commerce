@@ -1,15 +1,14 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:clean_architicture_ecommerce/core/app_theme.dart';
-import 'package:clean_architicture_ecommerce/core/widget/awesome_dialog_failure.dart';
-import 'package:clean_architicture_ecommerce/core/widget/page_transition.dart';
-import 'package:clean_architicture_ecommerce/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:clean_architicture_ecommerce/features/auth/presentation/pages/sign_up_page.dart';
-import 'package:clean_architicture_ecommerce/home/home_layout.dart';
+import '../../../../core/app_theme.dart';
+import '../../../../core/widget/awesome_dialog_failure.dart';
+import '../../../../core/widget/page_transition.dart';
+import '../bloc/login/login_bloc.dart';
+import 'sign_up_page.dart';
+import '../../../../home/home_layout.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
 
 class MyCustomLoginUI extends StatefulWidget {
   @override
@@ -182,7 +181,7 @@ class _MyCustomLoginUIState extends State<MyCustomLoginUI>
                                         highlightColor: Colors.transparent,
                                         onTap: () {
                                           HapticFeedback.lightImpact();
-                                          // _formkey.currentState!.validate();
+
                                           setState(() {
                                             //Email and password Validate
                                             emailController.text.isEmpty &&
@@ -304,109 +303,3 @@ class MyBehavior extends ScrollBehavior {
     return child;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import '../../../../home/home_layout.dart';
-
-// import '../../../../core/app_theme.dart';
-// import '../bloc/login/login_bloc.dart';
-// import 'sign_up_page.dart';
-// import '../widgets/login_page/login_btn_widget.dart';
-// import '../widgets/login_page/login_widget.dart';
-// import '../../../../home/home_page.dart';
-
-// import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-
-// class LoginPage extends StatelessWidget {
-//   const LoginPage({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: _buildAppBar(),
-//       body: _buildBody(),
-//     );
-//   }
-
-//   AppBar _buildAppBar() {
-//     return AppBar(
-//       centerTitle: true,
-//       title: const Text('Login Page'),
-//     );
-//   }
-
-//   Widget _buildBody() {
-//     final emailController = TextEditingController();
-//     final passwordController = TextEditingController();
-//     final _formkey = GlobalKey<FormState>();
-//     return BlocConsumer<LoginBloc, LoginState>(
-//       listener: (context, state) {
-//         if (state is SuccessLogin) {
-//           Navigator.of(context).pushAndRemoveUntil(
-//               MaterialPageRoute(builder: (_) => const HomeLayout()),
-//               (route) => false);
-//         }
-//       },
-//       builder: (context, state) {
-//         return SingleChildScrollView(
-//           child: Column(
-//             children: [
-//               LoginWidget(
-//                 emailController: emailController,
-//                 formkey: _formkey,
-//                 passwordController: passwordController,
-//               ),
-//               state is LoadingLoginState
-//                   ? const CircularProgressIndicator(
-//                       color: primaryColor,
-//                     )
-//                   : SizedBox(
-//                       width: 150,
-//                       child: LoginBtnWidget(
-//                         label: 'Login',
-//                         onPressed: () {
-//                           // if (_formkey.currentState!.validate()) {
-//                           BlocProvider.of<LoginBloc>(context).add(
-//                             PressLoginEvent(
-//                               username: emailController.text,
-//                               password: passwordController.text,
-//                             ),
-//                           );
-//                           // }
-//                         },
-//                       ),
-//                     ),
-//               const SizedBox(
-//                 height: 10,
-//               ),
-//               TextButton.icon(
-//                 onPressed: () {
-//                   Navigator.of(context).push(
-//                       MaterialPageRoute(builder: (_) => const SignUpPage()));
-//                 },
-//                 icon: const Icon(Icons.create),
-//                 label: const Text('Create Account'),
-//               )
-//             ],
-//           ),
-//         );
-//       },
-//     );
-//   }
-// }

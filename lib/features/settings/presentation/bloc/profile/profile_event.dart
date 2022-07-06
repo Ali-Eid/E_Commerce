@@ -10,9 +10,6 @@ abstract class ProfileEvent extends Equatable {
 class GetProfileEvent extends ProfileEvent {}
 
 class updateProfileEvent extends ProfileEvent {
-  // final String name;
-  // final String email;
-  // final String phone;
   final ProfileEntitiy profile;
 
   const updateProfileEvent({required this.profile});

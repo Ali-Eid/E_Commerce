@@ -1,7 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LocalCategoryDataSource {
-  // Future<Unit> cached(String token);
   Future<String> getcachedLang();
 }
 
