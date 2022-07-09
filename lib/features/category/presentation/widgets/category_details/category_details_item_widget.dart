@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import '../../../../../core/app_theme.dart';
 import '../../../../cart/presentation/bloc/add_delete_cart/add_delete_cart_bloc.dart';
 import '../../../../cart/presentation/bloc/cart/cart_bloc.dart';
@@ -33,6 +34,9 @@ class CategoryDetailsItemWidget extends StatelessWidget {
         );
       },
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        SizedBox(
+          height: 2.h,
+        ),
         Stack(
           alignment: Alignment.topRight,
           children: [
@@ -41,7 +45,7 @@ class CategoryDetailsItemWidget extends StatelessWidget {
               children: [
                 CachedNetworkImage(
                   width: double.infinity,
-                  height: _w / 4,
+                  height: 77.h,
                   imageUrl: model.image,
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),
@@ -54,7 +58,7 @@ class CategoryDetailsItemWidget extends StatelessWidget {
                     color: primaryColor,
                     child: Text(
                       AppLocalizations.of(context)!.discount,
-                      style: const TextStyle(fontSize: 12, color: Colors.white),
+                      style: TextStyle(fontSize: 10.sp, color: Colors.white),
                     ),
                   ),
               ],
@@ -88,6 +92,7 @@ class CategoryDetailsItemWidget extends StatelessWidget {
               model.name,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 12.sp, height: 1.1),
             ),
           ),
         ),
@@ -100,21 +105,24 @@ class CategoryDetailsItemWidget extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      '${model.price!.round()}',
+                      '${model.price!.round()} EGP',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(color: primaryColor),
+                      style: TextStyle(
+                          color: primaryColor,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
-                      width: 8,
+                    SizedBox(
+                      width: 8.w,
                     ),
                     if (model.price != model.oldPrice)
                       Expanded(
                         child: Text(
                           '${model.oldPrice!.round()}',
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.grey,
-                            fontSize: 14,
+                            fontSize: 12.sp,
                             decoration: TextDecoration.lineThrough,
                           ),
                         ),

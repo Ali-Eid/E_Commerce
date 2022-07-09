@@ -1,4 +1,5 @@
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import '../../../../core/app_theme.dart';
 import '../../../../core/widget/awesome_dialog_failure.dart';
 import '../../../../core/widget/page_transition.dart';
@@ -10,13 +11,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MyCustomLoginUI extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   @override
-  _MyCustomLoginUIState createState() => _MyCustomLoginUIState();
+  _LoginPage createState() => _LoginPage();
 }
 
-class _MyCustomLoginUIState extends State<MyCustomLoginUI>
-    with SingleTickerProviderStateMixin {
+class _LoginPage extends State<LoginPage> with SingleTickerProviderStateMixin {
   AnimationController? _controller;
   Animation<double>? _animation;
 
@@ -97,10 +97,10 @@ class _MyCustomLoginUIState extends State<MyCustomLoginUI>
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             const SizedBox(),
-                            const Text(
+                            Text(
                               'SIGN IN',
                               style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w600,
                                 color: primaryColor,
                               ),

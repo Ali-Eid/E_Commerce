@@ -66,8 +66,7 @@ class _SplashScreenAuth extends State<SplashScreenAuth>
       listener: (context, state) {
         if (state is LocalizationInitial) {
           Timer(const Duration(seconds: 2), () {
-            Navigator.pushReplacement(
-                context, PageTransition(MyCustomLoginUI()));
+            Navigator.pushReplacement(context, PageTransition(LoginPage()));
           });
         }
       },

@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import '../../../../cart/presentation/bloc/add_delete_cart/add_delete_cart_bloc.dart';
 import '../../../../cart/presentation/widgets/cart_icon_widget.dart';
 import '../../../../favourites/presentation/bloc/add_delete_favourite/add_delete_favourite_bloc.dart';
@@ -35,20 +36,31 @@ class ProductItemWidget extends StatelessWidget {
         );
       },
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        SizedBox(
+          height: 2.h,
+        ),
         Stack(
           alignment: Alignment.topRight,
           children: [
             Stack(
               alignment: Alignment.bottomLeft,
               children: [
-                CachedNetworkImage(
-                  width: double.infinity,
-                  height: _w / 4,
-                  imageUrl: model.image!,
-                  placeholder: (context, url) => const Center(
-                    child: CircularProgressIndicator(),
+                Container(
+                  // height: 65.h,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: CachedNetworkImage(
+                    width: double.infinity,
+                    height: 77.h,
+                    imageUrl: model.image!,
+                    placeholder: (context, url) => const Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
                   ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
                 if (model.price != model.oldPrice)
                   Container(
@@ -56,25 +68,25 @@ class ProductItemWidget extends StatelessWidget {
                     color: primaryColor,
                     child: Text(
                       AppLocalizations.of(context)!.discount,
-                      style: const TextStyle(fontSize: 12, color: Colors.white),
+                      style: TextStyle(fontSize: 10.sp, color: Colors.white),
                     ),
                   ),
               ],
             ),
-            BlocBuilder<FavouriteBloc, FavouriteState>(
-              builder: (context, state) {
-                return Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: BlocBuilder<AddDeleteFavouriteBloc,
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: BlocBuilder<FavouriteBloc, FavouriteState>(
+                builder: (context, state) {
+                  return BlocBuilder<AddDeleteFavouriteBloc,
                       AddDeleteFavouriteState>(
                     builder: (context, state) {
                       return FavouriteIconWidget(
                         product: model,
                       );
                     },
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
           ],
         ),
@@ -85,6 +97,7 @@ class ProductItemWidget extends StatelessWidget {
               model.name!,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontSize: 12.sp, height: 1.1),
             ),
           ),
         ),
@@ -97,21 +110,24 @@ class ProductItemWidget extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      '${model.price!.round()}',
+                      '${model.price!.round()} EGP',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(color: primaryColor),
+                      style: TextStyle(
+                          color: primaryColor,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
-                      width: 8,
+                    SizedBox(
+                      width: 8.w,
                     ),
                     if (model.price != model.oldPrice)
                       Expanded(
                         child: Text(
                           '${model.oldPrice!.round()}',
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.grey,
-                            fontSize: 14,
+                            fontSize: 12.sp,
                             decoration: TextDecoration.lineThrough,
                           ),
                         ),
@@ -121,7 +137,7 @@ class ProductItemWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding: const EdgeInsets.only(left: 8.0),
               child: BlocBuilder<AddDeleteCartBloc, AddDeleteCartState>(
                 builder: (context, state) {
                   return CartIconWidget(

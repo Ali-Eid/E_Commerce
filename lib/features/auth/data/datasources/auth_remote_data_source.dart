@@ -15,6 +15,7 @@ abstract class AuthRemoteDataSource {
     String password,
     String phone,
   );
+  Future<String> logout();
 }
 
 const BASE_URL = "https://student.valuxapps.com/api/";
@@ -70,6 +71,25 @@ class AuthRemoteDataSourceImplements implements AuthRemoteDataSource {
         throw SignUpException();
       }
     } else {
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<String> logout() async {
+    try {
+      final response =
+          await client.post(Uri.parse(BASE_URL + 'logout'), headers: {
+        'lang': lang!,
+        'Authorization': token!,
+      });
+      if (response.statusCode == 200) {
+        final jsonToString = json.decode(response.body) as Map<String, dynamic>;
+        return jsonToString['message'];
+      }
+      throw ServerException();
+    } catch (e) {
+      print(e.toString());
       throw ServerException();
     }
   }

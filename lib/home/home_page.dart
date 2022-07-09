@@ -15,12 +15,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: [
-          SizedBox(height: MediaQuery.of(context).size.height * 0.001),
-          const BannersPage(),
-          const Expanded(child: CategoryPage())
-        ],
+      child: BlocBuilder<ProductsBloc, ProductsState>(
+        builder: (context, state) {
+          return Column(
+            children: [
+              SizedBox(height: MediaQuery.of(context).size.height * 0.001),
+              const BannersPage(),
+              const Expanded(child: CategoryPage())
+            ],
+          );
+        },
       ),
     );
   }

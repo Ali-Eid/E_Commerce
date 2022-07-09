@@ -1,4 +1,8 @@
+import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'core/constants.dart';
+import 'features/auth/presentation/bloc/logout/logout_bloc.dart';
 import 'features/auth/splash_screen_auth.dart';
 import 'features/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:flutter/material.dart';
@@ -32,8 +36,10 @@ void main() async {
   lang = sharedPreferences.getString('lang') ?? 'en';
   BlocOverrides.runZoned(
     () {
-      runApp(MyApp(
-        local: lang!,
+      runApp(Phoenix(
+        child: MyApp(
+          local: lang!,
+        ),
       ));
     },
     blocObserver: MyBlocObserver(),
@@ -54,6 +60,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => di.sl<SignupBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => di.sl<LogoutBloc>(),
         ),
         BlocProvider(
           create: (context) =>
@@ -92,20 +101,28 @@ class MyApp extends StatelessWidget {
       ],
       child: BlocBuilder<LocalizationBloc, LocalizationState>(
         builder: (context, state) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: apptheme,
-            title: 'E_commerce_clean_architicture',
-            locale: Locale(state.local),
-            supportedLocales: L10n.all,
-            localizationsDelegates: const [
-              AppLocalizations.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-            ],
-            home: token != '' ? MyCustomSplashScreen() : SplashScreenAuth(),
-          );
+          return ScreenUtilInit(
+              designSize: const Size(
+                360,
+                690,
+              ),
+              builder: (context, snapshot) {
+                return MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  theme: apptheme,
+                  title: 'E_commerce_clean_architicture',
+                  locale: Locale(state.local),
+                  supportedLocales: L10n.all,
+                  localizationsDelegates: const [
+                    AppLocalizations.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                  ],
+                  home:
+                      token != '' ? MyCustomSplashScreen() : SplashScreenAuth(),
+                );
+              });
         },
       ),
     );

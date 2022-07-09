@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/src/size_extension.dart';
+
 import '../../../../../core/app_theme.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
@@ -34,8 +36,9 @@ class ProductsWidet extends StatelessWidget {
             scale: 1.5,
             child: FadeInAnimation(
               child: Container(
-                margin: EdgeInsets.only(
-                    bottom: _w / 30, left: _w / 60, right: _w / 60),
+                margin: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+                // margin: EdgeInsets.only(
+                //     bottom: _w / 30, left: _w / 60, right: _w / 60),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(20)),

@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import '../../../../core/app_theme.dart';
 import '../../../../core/constants.dart';
 import '../../domain/entities/cart_entitiy.dart';
@@ -44,8 +45,8 @@ class _CartWidgetState extends State<CartWidget> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         AppLocalizations.of(context)!.cart_empty,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18.sp),
                       ))
                 ],
               )
@@ -73,7 +74,7 @@ class _CartWidgetState extends State<CartWidget> {
                               curve: Curves.fastLinearToSlowEaseIn,
                               child: Container(
                                 margin: EdgeInsets.only(bottom: _w / 20),
-                                height: _w / 3,
+                                height: 110.h,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: const BorderRadius.all(
@@ -111,7 +112,7 @@ class _CartWidgetState extends State<CartWidget> {
         return Row(
           children: [
             Container(
-              width: _w / 6,
+              width: 60.w,
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 image: DecorationImage(
@@ -119,8 +120,8 @@ class _CartWidgetState extends State<CartWidget> {
                 ),
               ),
             ),
-            const SizedBox(
-              width: 5,
+            SizedBox(
+              width: 5.w,
             ),
             Expanded(
               child: Column(
@@ -130,7 +131,8 @@ class _CartWidgetState extends State<CartWidget> {
                     child: Text(
                       cart.product.name!,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
+                      maxLines: 2,
+                      style: TextStyle(fontSize: 12.sp),
                     ),
                   ),
                   Padding(
@@ -141,23 +143,23 @@ class _CartWidgetState extends State<CartWidget> {
                       children: [
                         Text(
                           '${AppLocalizations.of(context)!.price} :',
-                          style: const TextStyle(
-                            color: primaryColor,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: TextStyle(
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12.sp),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Text('${cart.product.price * cart.quantity}'),
                         ),
                         cart.product.price != cart.product.oldPrice
                             ? Text(
                                 '${cart.product.oldPrice * cart.quantity}',
-                                style: const TextStyle(
-                                  color: primaryColor,
-                                  decoration: TextDecoration.lineThrough,
-                                  decorationColor: primaryColor,
-                                ),
+                                style: TextStyle(
+                                    color: primaryColor,
+                                    decoration: TextDecoration.lineThrough,
+                                    decorationColor: primaryColor,
+                                    fontSize: 12.sp),
                               )
                             : const Text(''),
                       ],
@@ -177,7 +179,7 @@ class _CartWidgetState extends State<CartWidget> {
                           });
                         },
                         child: Container(
-                            width: 50,
+                            width: 30.w,
                             alignment: Alignment.center,
                             decoration: const BoxDecoration(
                                 color: primaryColor, shape: BoxShape.circle),
@@ -196,7 +198,7 @@ class _CartWidgetState extends State<CartWidget> {
                           });
                         },
                         child: Container(
-                          width: 50,
+                          width: 30.w,
                           alignment: Alignment.center,
                           decoration: const BoxDecoration(
                               color: primaryColor, shape: BoxShape.circle),

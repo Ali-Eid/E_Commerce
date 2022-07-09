@@ -1,4 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:clean_architicture_ecommerce/features/auth/presentation/widgets/Logout_widget.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import '../../../../core/app_theme.dart';
 import '../../../cart/presentation/bloc/cart/cart_bloc.dart';
 import '../../../category/presentation/bloc/category/category_bloc.dart';
@@ -29,14 +31,14 @@ class _ProfileWidgetState extends State<SettingWidget> {
       child: Column(
         children: [
           SizedBox(
-            height: _w / 8,
+            height: 40.h,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: _w / 8),
+            padding: EdgeInsets.symmetric(horizontal: 40.w),
             child: Column(
               children: [
                 CircleAvatar(
-                    radius: MediaQuery.of(context).size.width * 0.20,
+                    radius: 70.w,
                     child: Container(
                       decoration: BoxDecoration(
                           border: Border.all(width: 0.5, color: primaryColor),
@@ -44,56 +46,62 @@ class _ProfileWidgetState extends State<SettingWidget> {
                     ),
                     backgroundImage:
                         CachedNetworkImageProvider(widget.profile.image)),
-                const SizedBox(
-                  height: 11,
+                SizedBox(
+                  height: 11.h,
                 ),
                 Row(
                   children: [
                     Text(
                       '${AppLocalizations.of(context)!.name} :',
-                      style: const TextStyle(
-                          color: primaryColor, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 12.sp,
+                          color: primaryColor,
+                          fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
-                      width: 8,
+                    SizedBox(
+                      width: 8.w,
                     ),
                     Text(widget.profile.name),
                   ],
                 ),
-                const SizedBox(
-                  height: 11,
+                SizedBox(
+                  height: 11.h,
                 ),
                 Row(
                   children: [
                     Text(
                       '${AppLocalizations.of(context)!.phone} :',
-                      style: const TextStyle(
-                          color: primaryColor, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 12.sp,
+                          color: primaryColor,
+                          fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
-                      width: 8,
+                    SizedBox(
+                      width: 8.w,
                     ),
                     Text(widget.profile.phone),
                   ],
                 ),
-                const SizedBox(
-                  height: 11,
+                SizedBox(
+                  height: 11.h,
                 ),
                 Row(
                   children: [
                     Text(
                       '${AppLocalizations.of(context)!.email} :',
-                      style: const TextStyle(
-                          color: primaryColor, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 12.sp,
+                          color: primaryColor,
+                          fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
-                      width: 8,
+                    SizedBox(
+                      width: 8.w,
                     ),
                     Text(widget.profile.email),
                   ],
                 ),
-                const SizedBox(
-                  height: 11,
+                SizedBox(
+                  height: 11.h,
                 ),
                 Row(
                   children: [
@@ -114,8 +122,8 @@ class _ProfileWidgetState extends State<SettingWidget> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 15.h,
                 ),
                 BlocBuilder<LocalizationBloc, LocalizationState>(
                   builder: (context, state) {
@@ -130,8 +138,8 @@ class _ProfileWidgetState extends State<SettingWidget> {
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
                               AppLocalizations.of(context)!.change_language,
-                              style: const TextStyle(
-                                  fontSize: 18,
+                              style: TextStyle(
+                                  fontSize: 18.sp,
                                   color: primaryColor,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -188,6 +196,8 @@ class _ProfileWidgetState extends State<SettingWidget> {
               ],
             ),
           ),
+          SizedBox(height: 15.h),
+          const LogoutWidget(),
         ],
       ),
     );

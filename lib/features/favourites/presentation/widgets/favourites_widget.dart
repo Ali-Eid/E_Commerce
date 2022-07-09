@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import '../bloc/add_delete_favourite/add_delete_favourite_bloc.dart';
 import '../../../products/presentation/bloc/product_details/productdetails_bloc.dart';
 import '../../../products/presentation/pages/product_details_page.dart';
@@ -27,8 +28,8 @@ class FavouritesWidget extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         AppLocalizations.of(context)!.no_favourites,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 16.sp),
                       ))
                 ],
               )
@@ -75,7 +76,7 @@ class FavouritesWidget extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(bottom: _w / 20),
-        height: _w / 4,
+        height: 80.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: const BorderRadius.all(Radius.circular(20)),
@@ -92,8 +93,8 @@ class FavouritesWidget extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: _w / 6,
-                height: _w / 6,
+                width: 60.h,
+                height: 60.w,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   image: DecorationImage(
@@ -101,8 +102,8 @@ class FavouritesWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 5,
+              SizedBox(
+                width: 5.w,
               ),
               Expanded(
                 flex: 1,

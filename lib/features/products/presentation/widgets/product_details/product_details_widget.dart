@@ -1,18 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 import '../../../../cart/domain/entities/cart_entitiy.dart';
 import '../../../../cart/presentation/bloc/cart/cart_bloc.dart';
-import 'package:easycartanimation/easycartanimation.dart';
 import '../../../../../core/constants.dart';
 import '../../../../cart/presentation/bloc/add_delete_cart/add_delete_cart_bloc.dart';
 import '../../../../cart/presentation/widgets/cart_icon_widget.dart';
-import '../../../../favourites/domain/entities/product_favourite_entity.dart';
-import '../../../../favourites/presentation/bloc/add_delete_favourite/add_delete_favourite_bloc.dart';
+
 import '../../../../favourites/presentation/widgets/favourite_icon_widget.dart';
 import '../../../domain/entities/products_entities.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../../core/app_theme.dart';
 import '../../../domain/entities/product_details_entities.dart';
 import 'package:flutter/material.dart';
@@ -54,8 +51,9 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
         elevation: 30.0,
         clipBehavior: Clip.antiAlias,
         child: Container(
-          height: MediaQuery.of(context).size.height / 1.55,
-          width: MediaQuery.of(context).size.width,
+          height: 450.h,
+          // height: MediaQuery.of(context).size.height / 1.55,
+          // width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
             color: Colors.white,
           ),
@@ -67,46 +65,46 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
               children: [
                 Text(
                   widget.productDetails.name,
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0, bottom: 5.0),
-                  child: Text(
-                    '${AppLocalizations.of(context)!.about} ',
-                    style: const TextStyle(
-                        fontSize: 18,
-                        color: primaryColor,
-                        fontWeight: FontWeight.w500),
-                  ),
+                SizedBox(
+                  height: 2.h,
+                ),
+                Text(
+                  '${AppLocalizations.of(context)!.about} ',
+                  style: TextStyle(
+                      fontSize: 16.sp,
+                      color: primaryColor,
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 2.h,
                 ),
                 buildDescription(),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            '${widget.productDetails.price} EPG',
-                            style: const TextStyle(
-                                fontSize: 18, color: primaryColor),
-                          ),
-                          Text(
-                            AppLocalizations.of(context)!.price,
-                            style: const TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.w500),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      buildBottonCart(context)
-                    ],
-                  ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          '${widget.productDetails.price} EPG',
+                          style:
+                              TextStyle(fontSize: 16.sp, color: primaryColor),
+                        ),
+                        Text(
+                          AppLocalizations.of(context)!.price,
+                          style: TextStyle(
+                              fontSize: 13.sp, fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 10.0.w,
+                    ),
+                    buildBottonCart(context)
+                  ],
                 ),
               ],
             ),
@@ -126,8 +124,8 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
     return Expanded(
       child: Container(
         clipBehavior: Clip.antiAlias,
-        width: MediaQuery.of(context).size.width,
-        height: 50,
+        // width: 10.w,
+        height: 40.h,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.0),
             gradient: LinearGradient(
@@ -187,9 +185,9 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
             children: [
               Text(
                 AppLocalizations.of(context)!.add_to_cart,
-                style: const TextStyle(
+                style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold),
               ),
               CartIconWidget(
@@ -218,8 +216,8 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
         physics: const BouncingScrollPhysics(),
         child: Text(
           widget.productDetails.description,
-          style: const TextStyle(
-            fontSize: 16,
+          style: TextStyle(
+            fontSize: 14.sp,
             color: Colors.grey,
           ),
         ),
@@ -232,7 +230,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
       itemCount: widget.productDetails.images.length,
       itemBuilder: (context, index, n) {
         return SizedBox(
-          width: MediaQuery.of(context).size.width,
+          width: double.infinity,
           child: CachedNetworkImage(
             imageUrl: widget.productDetails.images[index],
             fit: BoxFit.contain,
@@ -251,7 +249,7 @@ class _ProductDetailsWidgetState extends State<ProductDetailsWidget> {
       },
       options: CarouselOptions(
         autoPlay: true,
-        height: MediaQuery.of(context).size.height / 2.5,
+        height: 250.h,
         viewportFraction: 1,
         autoPlayCurve: Curves.fastOutSlowIn,
         enableInfiniteScroll: true,

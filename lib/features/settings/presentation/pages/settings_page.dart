@@ -12,6 +12,7 @@ class SettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // BlocProvider.of<ProfileBloc>(context).add(GetProfileEvent());
     return BlocBuilder<ProfileBloc, ProfileState>(
       builder: (context, state) {
         if (state is LoadedProfileState) {

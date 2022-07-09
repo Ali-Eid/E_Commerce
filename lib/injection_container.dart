@@ -1,3 +1,6 @@
+import 'package:clean_architicture_ecommerce/features/auth/domain/usecases/logout_usecase.dart';
+import 'package:clean_architicture_ecommerce/features/auth/presentation/bloc/logout/logout_bloc.dart';
+
 import 'core/network/network_connection.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -73,6 +76,11 @@ Future<void> init() async {
   sl.registerFactory(
     () => SignupBloc(
       signUp: sl(),
+    ),
+  );
+  sl.registerFactory(
+    () => LogoutBloc(
+      logout: sl(),
     ),
   );
 //--------------
@@ -154,6 +162,11 @@ Future<void> init() async {
   );
   sl.registerLazySingleton(
     () => SignUpUseCase(
+      sl(),
+    ),
+  );
+  sl.registerLazySingleton(
+    () => LogoutUseCase(
       sl(),
     ),
   );

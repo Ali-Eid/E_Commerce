@@ -58,4 +58,20 @@ class AuthRepositoryImplements implements AuthRepository {
       throw left(OfflineException());
     }
   }
+
+  @override
+  Future<Either<Failure, String>> logout() async {
+    if (await networkConnection.isConnected) {
+      try {
+        final remote = await authRemoteDataSource.logout();
+        await authLocalDataSource.removeToken();
+        token = '';
+        return right(remote);
+      } on ServerException {
+        return left(ServerFailure());
+      }
+    } else {
+      return left(OfflineFailure());
+    }
+  }
 }

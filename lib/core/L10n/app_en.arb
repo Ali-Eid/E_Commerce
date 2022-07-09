@@ -17,6 +17,7 @@
     "no_favourites":"No Favourites",
     "cart_empty":"Cart Empty",
     "server_error":"Server Error Please Try again Later . ",
-    "offline":"No internet Connection , please check your connection ."
+    "offline":"No internet Connection , please check your connection .",
+    "log_out":"LogOut"
 
 }

@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/src/size_extension.dart';
 
 import '../../data/models/banners_model.dart';
 
@@ -37,7 +38,7 @@ class BannersWidget extends StatelessWidget {
           )
           .toList(),
       options: CarouselOptions(
-        height: MediaQuery.of(context).size.height * 0.25,
+        height: 160.h,
         aspectRatio: 16 / 9,
         viewportFraction: 1,
         initialPage: 0,
