@@ -42,7 +42,7 @@ dependencies:
   #dialog
   awesome_dialog: ^2.2.1
   #image picker 
-  # image_picker:
+  image_picker:
   #play animation 
   lottie:
   #Restart application

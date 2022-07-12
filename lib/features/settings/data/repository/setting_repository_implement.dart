@@ -50,4 +50,20 @@ class SettingRepositoryImpl implements SettingRepository {
       return left(OfflineFailure());
     }
   }
+
+  @override
+  Future<Either<Failure, ProfileEntitiy>> uploadprofilePhoto(
+      {required ProfileEntitiy profile}) async {
+    if (await networkConnection.isConnected) {
+      try {
+        final remote =
+            await remoteSettingDataSource.uploadPhoto(profile: profile);
+        return right(remote);
+      } catch (e) {
+        return left(ServerFailure());
+      }
+    } else {
+      return left(OfflineFailure());
+    }
+  }
 }

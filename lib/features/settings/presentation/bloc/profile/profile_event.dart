@@ -14,3 +14,9 @@ class updateProfileEvent extends ProfileEvent {
 
   const updateProfileEvent({required this.profile});
 }
+
+class uploadProfilePhotoEvent extends ProfileEvent {
+  final ProfileEntitiy profile;
+
+  const uploadProfilePhotoEvent({required this.profile});
+}

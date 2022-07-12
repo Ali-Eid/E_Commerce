@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:clean_architicture_ecommerce/features/settings/domain/usecases/upload_photo_usecase.dart';
 import '../../../../../core/error/failures/failures.dart';
 import '../../../domain/entities/profile_entity.dart';
 import '../../../domain/usecases/get_profile_usecase.dart';
@@ -11,9 +12,12 @@ part 'profile_state.dart';
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final GetProfileUseCase getProfile;
   final UpdateProfileUseCase updateProfile;
+  final UploadPhotoUseCase uploadPhoto;
+
   ProfileBloc({
     required this.getProfile,
     required this.updateProfile,
+    required this.uploadPhoto,
   }) : super(ProfileInitial()) {
     on<ProfileEvent>((event, emit) async {
       if (event is GetProfileEvent) {
@@ -27,6 +31,16 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       } else if (event is updateProfileEvent) {
         emit(LoadingupdateProfileState());
         final failureOrProfile = await updateProfile(profile: event.profile);
+        failureOrProfile.fold((failure) {
+          emit(_mapFailureToState(failure));
+        }, (profile) {
+          emit(
+            LoadedupdateProfileState(profile: profile),
+          );
+        });
+      } else if (event is uploadProfilePhotoEvent) {
+        emit(LoadingupdateProfileState());
+        final failureOrProfile = await uploadPhoto(profile: event.profile);
         failureOrProfile.fold((failure) {
           emit(_mapFailureToState(failure));
         }, (profile) {

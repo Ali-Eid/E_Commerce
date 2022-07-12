@@ -10,6 +10,7 @@ import 'package:http/http.dart' as http;
 abstract class RemoteSettingDataSource {
   Future<ProfileModel> getProfile();
   Future<ProfileModel> updateProfile({required ProfileEntitiy profile});
+  Future<ProfileModel> uploadPhoto({required ProfileEntitiy profile});
 }
 
 class RemoteSettingDataSourceImplement implements RemoteSettingDataSource {
@@ -48,6 +49,7 @@ class RemoteSettingDataSourceImplement implements RemoteSettingDataSource {
         'name': profile.name,
         'email': profile.email,
         'phone': profile.phone,
+        // 'image': profile.image,
       };
       final response = await client
           .put(Uri.parse(BASE_URL + 'update-profile'), body: body, headers: {
@@ -56,6 +58,37 @@ class RemoteSettingDataSourceImplement implements RemoteSettingDataSource {
       });
 
       if (response.statusCode == 200) {
+        final jsondecode = json.decode(response.body) as Map<String, dynamic>;
+        print(' profile update is  ${jsondecode['data']}');
+        final ProfileModel jsonToProfile =
+            ProfileModel.fromjson(jsondecode['data']);
+        return jsonToProfile;
+      } else {
+        throw ServerException();
+      }
+    } catch (e) {
+      print(e.toString());
+      throw ServerException();
+    }
+  }
+
+  @override
+  Future<ProfileModel> uploadPhoto({required ProfileEntitiy profile}) async {
+    try {
+      final body = {
+        'name': profile.name,
+        'email': profile.email,
+        'phone': profile.phone,
+        'image': profile.image,
+      };
+      final response = await client
+          .put(Uri.parse(BASE_URL + 'update-profile'), body: body, headers: {
+        'lang': lang!,
+        'Authorization': token!,
+      });
+
+      if (response.statusCode == 200) {
+        print(response.body);
         final jsondecode = json.decode(response.body) as Map<String, dynamic>;
         print(' profile update is  ${jsondecode['data']}');
         final ProfileModel jsonToProfile =

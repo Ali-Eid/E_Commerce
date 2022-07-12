@@ -22,11 +22,13 @@ class ErrorProfileState extends ProfileState {
 
   const ErrorProfileState({required this.message});
 }
+
 class OfflineProfileState extends ProfileState {
   final String message;
 
   const OfflineProfileState({required this.message});
 }
+
 //----------------update profile
 class LoadingupdateProfileState extends ProfileState {}
 
@@ -40,4 +42,18 @@ class ErrorupdateProfileState extends ProfileState {
   final String message;
 
   const ErrorupdateProfileState({required this.message});
+}
+
+//change profile photo
+
+class uploadPhotoProfileState extends ProfileState {
+  // final String photo;
+
+  // const uploadPhotoProfileState({required this.photo});
+}
+
+class ErroruploadPhotoProfileState extends ProfileState {
+  // final String message;
+
+  // const ErroruploadPhotoProfileState({required this.message});
 }

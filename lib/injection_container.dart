@@ -1,5 +1,6 @@
 import 'package:clean_architicture_ecommerce/features/auth/domain/usecases/logout_usecase.dart';
 import 'package:clean_architicture_ecommerce/features/auth/presentation/bloc/logout/logout_bloc.dart';
+import 'package:clean_architicture_ecommerce/features/settings/domain/usecases/upload_photo_usecase.dart';
 
 import 'core/network/network_connection.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
@@ -148,6 +149,7 @@ Future<void> init() async {
     () => ProfileBloc(
       getProfile: sl(),
       updateProfile: sl(),
+      uploadPhoto: sl(),
     ),
   );
   sl.registerFactory(
@@ -229,6 +231,11 @@ Future<void> init() async {
   );
   sl.registerLazySingleton(
     () => UpdateProfileUseCase(
+      sl(),
+    ),
+  );
+  sl.registerLazySingleton(
+    () => UploadPhotoUseCase(
       sl(),
     ),
   );
